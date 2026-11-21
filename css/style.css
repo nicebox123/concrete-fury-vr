@@ -1,0 +1,33 @@
+:root{--bg:#0d0f10;--fg:#e8e4dc;--accent:#e2502c;--muted:#8d8a84;--panel:rgba(18,20,22,.92)}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow:hidden}
+canvas{display:block}
+#overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:16px;z-index:10;background:radial-gradient(ellipse at center,rgba(20,22,24,.55),rgba(5,6,7,.92))}
+#overlay.hidden{display:none}
+.panel{max-width:760px;width:100%;background:var(--panel);border:1px solid #2a2d30;padding:28px 28px 20px;border-radius:6px;max-height:100%;overflow:auto}
+h1{margin:0;font-size:46px;letter-spacing:6px;font-weight:900}
+h1 span{color:var(--accent)}
+.sub{margin:4px 0 20px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;font-size:13px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap}
+button{font:inherit;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:14px 22px;border-radius:4px;border:1px solid #3a3d40;background:#1d2023;color:var(--fg);cursor:pointer}
+button:hover:not(:disabled){border-color:var(--accent)}
+button:disabled{opacity:.45;cursor:default}
+#btnVR:not(:disabled){background:var(--accent);border-color:var(--accent);color:#fff}
+.status{color:var(--muted);font-size:13px;min-height:1.2em}
+details{margin-top:8px}
+summary{cursor:pointer;color:var(--muted)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:640px){.cols{grid-template-columns:1fr}h1{font-size:32px}}
+.cols h3{margin:12px 0 4px;font-size:14px;color:var(--accent);text-transform:uppercase;letter-spacing:1px}
+.cols ul{margin:0;padding-left:18px;font-size:13px;line-height:1.6}
+#hud{position:fixed;inset:0;pointer-events:none;z-index:5}
+#hud.hidden{display:none}
+#crosshair{position:absolute;left:50%;top:50%;width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:rgba(255,255,255,.85);box-shadow:0 0 0 1px rgba(0,0,0,.6)}
+#hurt{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 45%,rgba(160,0,0,.85));opacity:0;transition:opacity .08s}
+#hudTL{position:absolute;left:16px;top:14px;font-size:14px;line-height:1.5;text-shadow:0 1px 2px #000;white-space:pre}
+#hudBR{position:absolute;right:16px;bottom:16px;text-align:right;text-shadow:0 1px 2px #000}
+#hpbar{width:220px;height:10px;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.3);margin-left:auto}
+#hpfill{height:100%;width:100%;background:var(--accent)}
+#ammo{font-size:26px;font-weight:800;margin-top:6px}
+#hint{position:absolute;left:50%;bottom:16%;transform:translateX(-50%);font-size:14px;color:#fff;text-shadow:0 1px 2px #000;text-align:center}
+#banner{position:absolute;left:50%;top:22%;transform:translateX(-50%);font-size:34px;font-weight:900;letter-spacing:4px;text-shadow:0 2px 6px #000;text-align:center}

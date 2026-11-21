@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>Concrete Fury VR</title>
+<link rel="stylesheet" href="css/style.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+<div id="overlay">
+  <div class="panel">
+    <h1>CONCRETE <span>FURY</span></h1>
+    <p class="sub">VR physics combat sandbox</p>
+    <div class="buttons">
+      <button id="btnVR" disabled>Checking VR…</button>
+      <button id="btnDesktop">Play on desktop</button>
+    </div>
+    <p id="status" class="status">Loading…</p>
+    <details>
+      <summary>Controls</summary>
+      <div class="cols">
+        <div>
+          <h3>Meta Quest</h3>
+          <ul>
+            <li><b>Left stick</b> move (click: sprint)</li>
+            <li><b>Right stick</b> snap/smooth turn · up: jump · down: crouch</li>
+            <li><b>Grip</b> grab / climb · point + grip pulls items to you</li>
+            <li><b>Trigger</b> fire · menu select</li>
+            <li><b>A / X</b> on gun hand: drop mag / open cylinder</li>
+            <li><b>B / Y</b> on gun hand: rack slide / close cylinder</li>
+            <li><b>Grip at belt</b> with a gun in the other hand: take ammo</li>
+            <li><b>Rack</b>: grab the slide or pump and pull back</li>
+            <li><b>Holsters</b>: let go near your hip or over your shoulder</li>
+            <li><b>Y (empty hand) / hold Y</b> pause menu · <b>X</b> spawn menu (sandbox)</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Desktop</h3>
+          <ul>
+            <li><b>WASD</b> move · <b>Shift</b> sprint · <b>Space</b> jump · <b>C</b> crouch</li>
+            <li><b>Mouse</b> look · <b>LMB</b> fire / swing / punch</li>
+            <li><b>E</b> grab / drop (pulls items you look at)</li>
+            <li><b>RMB</b> throw held item · <b>F</b> kick</li>
+            <li><b>R</b> reload · <b>Q</b> swap holstered weapon</li>
+            <li><b>Tab</b> spawn menu (sandbox) · <b>Esc</b> pause</li>
+          </ul>
+        </div>
+      </div>
+    </details>
+  </div>
+</div>
+<div id="hud" class="hidden">
+  <div id="crosshair"></div>
+  <div id="hurt"></div>
+  <div id="hudTL"></div>
+  <div id="hudBR"><div id="hpbar"><div id="hpfill"></div></div><div id="ammo"></div></div>
+  <div id="hint"></div>
+  <div id="banner"></div>
+</div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
